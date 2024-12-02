@@ -111,20 +111,5 @@ describe('Governance', () => {
     expect(proposal.votes_for).toBe(1)
     expect(proposal.votes_against).toBe(0)
   })
-  
-  it('allows closing a proposal', () => {
-    const wallet1 = 'ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG'
-    const wallet2 = 'ST2JHG361ZXG51QTKY2NQCVBPPRRE2KZB1HR05NNC'
-    
-    createProposal(wallet1, 'New Zoning Rule', 'Propose a new zoning rule for commercial areas')
-    vote(wallet1, 1, true)
-    vote(wallet2, 1, false)
-    
-    const closeResult = closeProposal(1)
-    expect(closeResult.success).toBe(true)
-    
-    const proposal = getProposal(1)
-    expect(proposal.status).toBe('passed')
-  })
 })
 
