@@ -101,3 +101,4 @@ A blockchain-powered platform combining decentralized governance mechanisms with
 
 ## Contact
 [Add project contact information]
+
